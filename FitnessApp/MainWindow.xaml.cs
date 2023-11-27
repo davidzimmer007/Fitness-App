@@ -63,7 +63,7 @@ namespace FitnessApp
             Uebung uebung;
             try
             {
-                string[] lines = File.ReadAllLines("Data.csv");
+                string[] lines = File.ReadAllLines("./Data/Data.csv");
 
                 foreach (string line in lines.Skip(1)) 
                 {
