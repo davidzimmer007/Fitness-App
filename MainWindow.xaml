@@ -1,0 +1,53 @@
+﻿<Window x:Class="FitnessApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessApp"
+        mc:Ignorable="d"
+        Title="Davids Fitness" WindowState="Maximized" ResizeMode="NoResize" d:DesignWidth="1920" d:DesignHeight="1080">
+
+    <Window.Resources>
+        <local:Muskeln x:Key="MyDataContext">
+
+        </local:Muskeln>
+
+    </Window.Resources>
+
+
+    <Grid x:Name="MeinGrid" Background="Gray">
+
+        <StackPanel Margin="0,0,1600,0" Background="#FF313131">
+            <Label Background="DarkGreen" Foreground="White" Content="David's Fitness" FontFamily="Segoe UI Semibold" FontSize="40">
+
+            </Label>
+            <ListBox 
+            x:Name="MeineListBox" 
+            Background="#FF313131" 
+            FontSize="29" FontFamily="Segoe UI Semibold" 
+            BorderBrush="#FF313131" 
+            ItemsSource="{Binding MuskelListe}"
+            DataContext="{StaticResource MyDataContext}"
+            SelectionChanged="MeineListBox_SelectionChanged" Height="274">
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding MuskelName}" Width="300" Foreground="White" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+            <Button Content="Wochenplan" Foreground="DarkGreen" FontSize="29" Height="40" Background="#FF313131" BorderBrush="#FF313131" FontFamily="Segoe UI Semibold" Click="Button_Click">
+                
+            </Button>
+
+        </StackPanel>
+
+
+        <ContentControl x:Name="MeinContentControl" Content="ContentControl" HorizontalAlignment="Left" Margin="380,60,0,0" VerticalAlignment="Top" Height="940" Width="1454"/>
+
+
+
+
+    </Grid>
+</Window>
