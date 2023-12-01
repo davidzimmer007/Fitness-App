@@ -64,7 +64,6 @@ namespace FitnessApp
             try
             {
                 string[] lines = File.ReadAllLines("./Data/Data.csv");
-
                 foreach (string line in lines.Skip(1)) 
                 {
                     string[] values = line.Split(',');
@@ -152,6 +151,7 @@ namespace FitnessApp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MeinContentControl.Content = PagePlan;
+           
         }
     }
 }

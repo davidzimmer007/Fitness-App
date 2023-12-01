@@ -69,6 +69,7 @@ namespace FitnessApp
 
                 button.Background = Brushes.DarkGreen;
                 button.Foreground = Brushes.White;
+                button.Click += Button_Click;
               
                 button.MouseEnter += (sender, e) =>
                 {
@@ -108,6 +109,17 @@ namespace FitnessApp
             wrapPanel.Width = (cardWidth + horizontalSpacing) * cardsPerRow;
 
             MeinContainer.Content = wrapPanel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window popup = new Window();
+            popup.Title = "Popup-Fenster";
+            popup.Content = "Das ist ein Popup-Fenster!";
+            popup.Width = 300;
+            popup.Height = 350;
+            popup.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            popup.ShowDialog();
         }
     }
 }
